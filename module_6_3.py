@@ -19,13 +19,15 @@ class Eagle:
 
 class Pegasus(Horse, Eagle):
     def __init__(self):
-        super().__init__()
+        Horse.__init__(self)
+        Eagle.__init__(self)
+
 
     # Метод, где dx и dy изменения дистанции. В этом методе должны запускаться
     # наследованные методы run и fly соответственно.
     def move(self, dx, dy):
-        super().run(dx)
-        super().fly(dy)
+        Horse.run(self,dx)
+        Eagle.fly(self,dy)
 
     # Метод возвращает текущее положение пегаса в виде кортежа - (x_distance, y_distance) в том же порядке.
     def get_pos(self):
